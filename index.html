@@ -4,14 +4,25 @@
 		<title>CV Arianna Berrafato</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<style>
+		
+        <style>
 			/* --- PALETTE DEFINITIVA --- */
 			:root {
 				--peony: #F4C9D6;
 				--espresso: #3E2723;
 				--beige-bg: #FDFBF7;
 			}
+
+            /* --- APPLICAZIONE FONT GLOBALE --- */
+            body, h1, h2, h3, h4, h5, h6, p, a, span, div, strong, b, li {
+                font-family: 'Forum', serif !important;
+            }
 
 			body, #wrapper, #main, .inner, #sidebar, #sidebar > .inner { 
 				background-color: var(--beige-bg) !important; 
@@ -31,22 +42,25 @@
 			.major h2::after { background-color: var(--peony) !important; }
             #sidebar { border-left: 5px solid var(--peony) !important; }
 
-            /* --- FIX DEFINITIVO COLORE ICONE (Niente più rosso!) --- */
+            /* RIMOZIONE LINEE TRATTEGGIATE NELLA SIDEBAR */
+            #sidebar section { border-top: none !important; border-bottom: none !important; margin-top: 0 !important; }
+
+            /* FIX DEFINITIVO COLORE ICONE */
             .icon, .icon::before, .icons li a { color: var(--peony) !important; }
             .icons li a:hover { color: var(--espresso) !important; }
 
-			/* --- I NOSTRI NUOVI BLOCCHI PERSONALIZZATI --- */
+			/* BLOCCHI PERSONALIZZATI */
 			.custom-blocks {
 				display: flex !important;
 				flex-direction: column !important;
-				gap: 1.5em !important; /* Spazio ridotto tra i blocchi */
+				gap: 1.5em !important;
 				margin-top: 1.5em !important;
 			}
 			.custom-blocks article { 
 				background: #ffffff !important;
 				border: 2px solid var(--peony) !important; 
 				border-radius: 15px !important;
-				padding: 1.8em 2em !important; /* Blocchi più piccoli e compatti */
+				padding: 1.8em 2em !important;
 				margin: 0 !important;
 				box-shadow: 4px 4px 0px var(--peony) !important;
 				width: 100% !important;
@@ -55,7 +69,7 @@
 				gap: 20px !important;
 			}
 			.custom-blocks article .icon {
-				font-size: 2em !important; /* Icona leggermente più piccola */
+				font-size: 2em !important;
 				margin: 0 !important;
 			}
 			.custom-blocks article .content { flex: 1 !important; }
@@ -68,14 +82,14 @@
 				margin: 0 !important;
 			}
 
-            /* GRIGLIA A 2 COLONNE PER FORMAZIONE E LINGUE (Blocchi più piccoli) */
+            /* GRIGLIA A 2 COLONNE */
             .small-blocks {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
                 gap: 1.5em !important;
             }
             @media (max-width: 768px) {
-                .small-blocks { grid-template-columns: 1fr !important; } /* Su cellulare tornano in colonna */
+                .small-blocks { grid-template-columns: 1fr !important; }
             }
 
             /* SPAZIO SEGNAPOSTO CALENDARIO */
@@ -86,6 +100,26 @@
                 text-align: center;
                 background-color: #ffffff;
                 margin-bottom: 2em;
+            }
+
+            /* --- NUOVO PLAYER AUDIO ESPRESSO --- */
+            .audio-wrapper {
+                background-color: var(--espresso);
+                border-radius: 15px;
+                padding: 15px;
+                text-align: center;
+                box-shadow: 4px 4px 0px var(--peony);
+            }
+            .audio-wrapper .track-name {
+                display: block;
+                color: var(--peony);
+                font-size: 1.1em;
+                margin-bottom: 10px;
+                letter-spacing: 1px;
+            }
+            /* Rende il player interno compatibile col design */
+            audio::-webkit-media-controls-panel {
+                background-color: var(--beige-bg) !important;
             }
 
 			/* BOTTONE SCRIVIMI */
@@ -176,7 +210,7 @@
 
 					<section>
 						<header class="major"><h2>Formazione & Lingue</h2></header>
-                        <div class="custom-blocks small-blocks">
+						<div class="custom-blocks small-blocks">
 							
                             <article>
                                 <span class="icon solid fa-graduation-cap"></span>
@@ -208,23 +242,25 @@
 				<div class="inner">
 					<section>
 
-                        <header class="major"><h2>Agenda</h2></header>
+                        <header class="major"><h2>Calendario</h2></header>
                         <div class="calendar-placeholder">
                             <span class="icon solid fa-calendar-alt"></span>
                             <p style="margin: 0;"><b>Spazio per Google Calendar</b><br><i>Inseriremo il widget qui!</i></p>
                         </div>
 
-						<header class="major"><h2>Meteo Siracusa</h2></header>
+						<header class="major"><h2>Meteo</h2></header>
 						<div style="margin-bottom: 2em;">
 							<a class="weatherwidget-io" href="https://forecast7.com/it/37initial0815initial29/siracusa/" data-label_1="SIRACUSA" data-label_2="METEO" data-theme="pure" data-basecolor="#FDFBF7" data-accent="#F4C9D6" data-textcolor="#3E2723">SIRACUSA WEATHER</a>
 							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');</script>
 						</div>
 						
 						<header class="major"><h2>Playlist</h2></header>
-						<p>🎵 Music Vibe:</p>
-						<audio controls style="width: 100%;">
-							<source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mpeg">
-						</audio>
+                        <div class="audio-wrapper">
+                            <span class="track-name"><b>Slow Motion</b> - Bensound</span>
+						    <audio controls style="width: 100%;">
+							    <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mpeg">
+						    </audio>
+                        </div>
 					</section>
 				</div>
 			</div>
