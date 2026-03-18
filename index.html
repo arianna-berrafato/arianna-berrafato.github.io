@@ -6,19 +6,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			/* --- PALETTE DEFINITIVA E PULITA --- */
+			/* --- PALETTE DEFINITIVA --- */
 			:root {
 				--peony: #F4C9D6;
 				--espresso: #3E2723;
-				--beige-bg: #FDFBF7; /* Beige crema 100% neutro, zero rosa */
+				--beige-bg: #FDFBF7;
 			}
 
-			/* Sfondo Forzato */
 			body, #wrapper, #main, .inner, #sidebar, #sidebar > .inner { 
 				background-color: var(--beige-bg) !important; 
 			}
 
-			/* CURSORE STELLA ESPRESSO (Ora funziona davvero!) */
+			/* CURSORE STELLA ESPRESSO */
 			html, body { 
 				cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><text y='24' font-size='26' fill='%233E2723'>★</text></svg>"), auto !important; 
 			}
@@ -32,28 +31,43 @@
 			.major h2::after { background-color: var(--peony) !important; }
             #sidebar { border-left: 5px solid var(--peony) !important; }
 
-			/* --- BLOCCHI ESPERIENZE PIU' ARIOSI E DISTANZIATI --- */
+			/* --- NUOVI BLOCCHI ESPERIENZE (Con struttura icone corretta) --- */
 			.features {
 				display: flex !important;
-				flex-direction: column !important; /* Li mette in verticale uno sopra l'altro */
-				gap: 3em !important; /* Crea uno spazio enorme tra un blocco e l'altro */
+				flex-direction: column !important;
+				gap: 2.5em !important;
 				margin-top: 2em !important;
 			}
 			.features article { 
 				background: #ffffff !important;
 				border: 3px solid var(--peony) !important; 
-				border-radius: 25px !important;
-				padding: 3.5em 3em !important; /* Molto più spazio dentro il blocco */
+				border-radius: 20px !important;
+				padding: 2.5em !important;
 				margin: 0 !important;
-				box-shadow: 8px 8px 0px var(--peony) !important;
-				width: 100% !important; /* Occupa tutta la larghezza per respirare */
+				box-shadow: 6px 6px 0px var(--peony) !important;
+				width: 100% !important;
+				display: flex !important; /* Mette icona e testo affiancati correttamente */
+				align-items: flex-start !important;
+				gap: 25px !important; /* Spazio elegante tra l'icona e il testo */
 			}
-			.features article h3 {
-				margin-bottom: 1em !important; /* Spazio sotto il titolo del lavoro */
+            
+            /* Stile per le nuove icone */
+			.features article .icon {
+				color: var(--peony) !important;
+				font-size: 2.5em !important;
+				margin: 0 !important; /* Rimuove margini fastidiosi */
+			}
+
+            /* Contenitore per staccare il titolo dal testo */
+			.features article .content {
+				flex: 1 !important;
+			}
+			.features article .content h3 {
+				margin-bottom: 0.5em !important;
 				font-size: 1.5em !important;
 			}
-			.features article p {
-				line-height: 1.9 !important; /* Testo più staccato e leggibile */
+			.features article .content p {
+				line-height: 1.8 !important;
 				margin: 0 !important;
 			}
 
@@ -68,7 +82,7 @@
 				margin-top: 1em !important;
 			}
 
-			/* BARRA DI SCORRIMENTO PEONY (Forzata) */
+			/* BARRA DI SCORRIMENTO */
 			::-webkit-scrollbar { width: 14px !important; }
 			::-webkit-scrollbar-track { background: var(--beige-bg) !important; }
 			::-webkit-scrollbar-thumb { 
@@ -106,21 +120,34 @@
 					<section>
 						<header class="major"><h2>Esperienze Lavorative</h2></header>
 						<div class="features">
-							<article>
-								<h3>💍 Pandora Jewelry</h3>
-								<p><b>Addetta Vendite (2024 - 2025)</b><br>
-								Servizio clienti personalizzato in gioielleria di fascia medio-alta. Gestione completa delle vendite e del magazzino, oltre alla cura minuziosa per l'allestimento vetrine e il mantenimento dell'ordine in negozio.</p>
+							
+                            <article>
+                                <span class="icon solid fa-gem"></span>
+                                <div class="content">
+								    <h3>Pandora Jewelry</h3>
+								    <p><b>Addetta Vendite (2024 - 2025)</b><br>
+								    Servizio clienti personalizzato in gioielleria di fascia medio-alta. Gestione completa delle vendite e del magazzino, oltre alla cura minuziosa per l'allestimento vetrine e il mantenimento dell'ordine in negozio.</p>
+                                </div>
 							</article>
-							<article>
-								<h3>👟 Foot Locker</h3>
-								<p><b>Addetta Vendite (2023)</b><br>
-								Supporto dedicato alla clientela per la scelta dei prodotti e delle taglie. Gestione in autonomia della cassa e della chiusura giornaliera, collaborando attivamente agli obiettivi di vendita del team.</p>
+                            
+                            <article>
+                                <span class="icon solid fa-shopping-bag"></span>
+                                <div class="content">
+								    <h3>Foot Locker</h3>
+								    <p><b>Addetta Vendite (2023)</b><br>
+								    Supporto dedicato alla clientela per la scelta dei prodotti e delle taglie. Gestione in autonomia della cassa e della chiusura giornaliera, collaborando attivamente agli obiettivi di vendita del team.</p>
+                                </div>
 							</article>
-							<article>
-								<h3>🍔 McDonald's</h3>
-								<p><b>Crew Member (2022)</b><br>
-								Supporto nella preparazione alimentare e nel servizio al cliente. Rispetto rigoroso degli standard di igiene e sicurezza, con collaborazione dinamica sia in cucina che in sala.</p>
+                            
+                            <article>
+                                <span class="icon solid fa-utensils"></span>
+                                <div class="content">
+								    <h3>McDonald's</h3>
+								    <p><b>Crew Member (2022)</b><br>
+								    Supporto nella preparazione alimentare e nel servizio al cliente. Rispetto rigoroso degli standard di igiene e sicurezza, con collaborazione dinamica sia in cucina che in sala.</p>
+                                </div>
 							</article>
+
 						</div>
 					</section>
 
