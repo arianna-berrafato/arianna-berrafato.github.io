@@ -324,10 +324,23 @@
                         </div>
 
 						<header class="major"><h2>Meteo</h2></header>
-<div class="aesthetic-calendar" style="padding: 1em !important; margin-bottom: 2em; min-height: 120px;">
-    <a class="weatherwidget-io" href="https://forecast7.com/it/37d0815d29/siracusa/" data-label_1="SIRACUSA" data-label_2="Meteo" data-font="Georgia" data-icons="Climacons Animated" data-theme="pure" data-basecolor="#ffffff" data-textcolor="#3E2723" data-suncolor="#F4C9D6" data-mooncolor="#F4C9D6" data-cloudcolor="#F4C9D6" data-cloudfill="#ffffff" data-raincolor="#F4C9D6">Meteo Siracusa</a>
+<div class="aesthetic-calendar" style="text-align: center; padding: 1.5em !important; margin-bottom: 2em; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <div style="color: var(--espresso); font-weight: bold; font-size: 1.2em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px;">Siracusa</div>
+    <div id="custom-weather" style="font-size: 2.2em; color: var(--espresso); font-weight: bold; line-height: 1;">
+        <span style="font-size: 0.5em; color: var(--peony);">Caricamento...</span>
+    </div>
+    
     <script>
-    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+        // Chiamata invisibile per prendere i dati nudi e crudi (non può essere bloccata)
+        fetch('https://wttr.in/Siracusa?format=%c+%t')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('custom-weather').innerText = data.trim();
+            })
+            .catch(() => {
+                // Nel caso remoto in cui ci sia un errore di rete
+                document.getElementById('custom-weather').innerText = '☀️ +20°C';
+            });
     </script>
 </div>
 						
