@@ -25,7 +25,7 @@
             }
 
             body {
-                font-size: 20px !important; /* Via di mezzo perfetta per equilibrare */
+                font-size: 20px !important; 
             }
 
 			body, #wrapper, #main, .inner, #sidebar, #sidebar > .inner { 
@@ -42,8 +42,8 @@
 			p, li { 
                 color: #4b3621 !important; 
                 font-size: 1.15em !important; 
-                line-height: 1.45 !important; /* Interlinea più stretta e compatta */
-                margin-bottom: 0.8em !important; /* Meno spazio bianco sotto i paragrafi */
+                line-height: 1.45 !important; 
+                margin-bottom: 0.8em !important; 
             }
             
             h1 { font-size: 3.4em !important; margin-bottom: 0.1em !important; line-height: 1.1 !important; }
@@ -63,13 +63,13 @@
             .icon, .icon::before, .icons li a { color: var(--peony) !important; }
             .icons li a:hover { color: var(--espresso) !important; }
 
-            /* --- BLOCCO CITAZIONE AESTHETIC (CHIUSO E SPOSTATO PIÙ IN BASSO) --- */
+            /* --- BLOCCO CITAZIONE AESTHETIC --- */
             .aesthetic-quote {
                 background-color: #ffffff !important;
-                border: 2px solid var(--peony) !important; /* Bordo chiuso come i blocchi lavorativi */
+                border: 2px solid var(--peony) !important; 
                 padding: 1.5em 2em !important;
-                margin: 2.5em 0 0 0 !important; /* Spinto più in basso */
-                border-radius: 15px !important; /* Angoli arrotondati uniformi */
+                margin: 4.5em 0 0 0 !important; /* MARGINE AUMENTATO PER SPINGERE LA CITAZIONE PIU' IN BASSO */
+                border-radius: 15px !important; 
                 box-shadow: 4px 4px 0px var(--peony) !important;
                 font-style: italic !important;
                 position: relative !important;
@@ -95,14 +95,14 @@
 			.custom-blocks {
 				display: flex !important;
 				flex-direction: column !important;
-				gap: 1.2em !important; /* Gap ridotto tra i blocchi */
+				gap: 1.2em !important; 
 				margin-top: 1.5em !important;
 			}
 			.custom-blocks article { 
 				background: #ffffff !important;
 				border: 2px solid var(--peony) !important; 
 				border-radius: 15px !important;
-				padding: 1.5em 1.8em !important; /* Padding leggermente ridotto per compattare */
+				padding: 1.5em 1.8em !important; 
 				margin: 0 !important;
 				box-shadow: 4px 4px 0px var(--peony) !important;
 				width: 100% !important;
@@ -187,9 +187,10 @@
 						<div class="content">
 							<header>
 								<h1>Arianna Berrafato</h1>
-								<p style="font-size: 1.4em !important; color: var(--espresso) !important; margin-bottom: 0.5em !important;">Lettere Moderne | Digital Specialist | Sales Expert</p>
+								<p style="font-size: 1.4em !important; color: var(--espresso) !important; margin-bottom: 0 !important;">Lettere Moderne | Digital Specialist | Sales Expert</p>
 							</header>
-							<p>Laureata in Lettere Moderne presso l'Università di Catania. Motivata e flessibile, ho maturato solide competenze nel settore retail di alto livello, unendo precisione organizzativa e doti comunicative.</p>
+                            
+                            <p style="margin-top: 1.5em !important;">Laureata in Lettere Moderne presso l'Università di Catania. Motivata e flessibile, ho maturato solide competenze nel settore retail di alto livello, unendo precisione organizzativa e doti comunicative.</p>
 							
                             <blockquote class="aesthetic-quote">
                                 <p>"Noi siamo fatti della stessa sostanza dei sogni, e nello spazio e nel tempo d’un sogno è raccolta la nostra breve vita."</p>
