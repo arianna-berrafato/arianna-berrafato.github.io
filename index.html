@@ -192,6 +192,13 @@
 			}
 			/* --- FIX MOBILE: MOSTRA WIDGET IN FONDO --- */
 			@media screen and (max-width: 1280px) {
+				#wrapper {
+					display: flex !important;
+					flex-direction: column !important; /* Questo costringe le sezioni a mettersi una sopra l'altra */
+				}
+				#main {
+					width: 100% !important;
+				}
 				#sidebar {
 					display: block !important;
 					position: relative !important;
@@ -203,6 +210,7 @@
 					margin-top: 3em !important;
 					padding-top: 2em !important;
 					height: auto !important;
+					padding-bottom: 3em !important;
 				}
 				/* Nasconde eventuali residui del bottone menù */
 				a[href="#sidebar"], .toggle {
