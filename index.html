@@ -68,7 +68,7 @@
                 background-color: #ffffff !important;
                 border: 2px solid var(--peony) !important; 
                 padding: 1.5em 2em !important;
-                margin: 4.5em 0 0 0 !important; /* MARGINE AUMENTATO PER SPINGERE LA CITAZIONE PIU' IN BASSO */
+                margin: 4.5em 0 0 0 !important; 
                 border-radius: 15px !important; 
                 box-shadow: 4px 4px 0px var(--peony) !important;
                 font-style: italic !important;
@@ -129,14 +129,55 @@
                 .small-blocks { grid-template-columns: 1fr !important; }
             }
 
-            /* SPAZIO SEGNAPOSTO CALENDARIO */
-            .calendar-placeholder {
-                border: 2px dashed var(--peony);
-                border-radius: 15px;
-                padding: 2em 1em;
-                text-align: center;
-                background-color: #ffffff;
+            /* --- NUOVO CALENDARIO ESTETICO --- */
+            .aesthetic-calendar {
+                background-color: #ffffff !important;
+                border: 2px solid var(--peony) !important;
+                border-radius: 15px !important;
+                padding: 1.5em !important;
                 margin-bottom: 2em;
+                box-shadow: 4px 4px 0px var(--peony) !important;
+            }
+            .calendar-header {
+                text-align: center;
+                color: var(--espresso);
+                font-weight: bold;
+                font-size: 1.3em;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+            .calendar-weekdays {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                text-align: center;
+                color: var(--peony);
+                font-weight: bold;
+                margin-bottom: 10px;
+                font-size: 1.1em;
+            }
+            .calendar-days {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                text-align: center;
+                gap: 5px;
+                color: var(--espresso);
+                font-size: 1.1em;
+            }
+            .calendar-days div {
+                padding: 5px 0;
+                border-radius: 50%;
+                width: 35px;
+                height: 35px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .calendar-days .today {
+                background-color: var(--peony);
+                color: var(--espresso);
+                font-weight: bold;
             }
 
             /* PLAYER AUDIO ESPRESSO */
@@ -190,7 +231,7 @@
 								<p style="font-size: 1.4em !important; color: var(--espresso) !important; margin-bottom: 0 !important;">Lettere Moderne | Digital Specialist | Sales Expert</p>
 							</header>
                             
-                            <p style="margin-top: 1.5em !important;">Laureata in Lettere Moderne presso l'Università di Catania. Motivata e flessibile, ho maturato solide competenze nel settore retail di alto livello, unendo precisione organizzativa e doti comunicative.</p>
+							<p style="margin-top: 1.5em !important;">Laureata in Lettere Moderne presso l'Università di Catania. Motivata e flessibile, ho maturato solide competenze nel settore retail di alto livello, unendo precisione organizzativa e doti comunicative.</p>
 							
                             <blockquote class="aesthetic-quote">
                                 <p>"Noi siamo fatti della stessa sostanza dei sogni, e nello spazio e nel tempo d’un sogno è raccolta la nostra breve vita."</p>
@@ -272,9 +313,14 @@
 					<section>
 
                         <header class="major"><h2>Calendario</h2></header>
-                        <div class="calendar-placeholder">
-                            <span class="icon solid fa-calendar-alt"></span>
-                            <p style="margin: 0;"><b>Spazio per Google Calendar</b><br><i>Inseriremo il widget qui!</i></p>
+                        
+                        <div class="aesthetic-calendar">
+                            <div class="calendar-header" id="month-name">Mese Anno</div>
+                            <div class="calendar-weekdays">
+                                <div>L</div><div>M</div><div>M</div><div>G</div><div>V</div><div>S</div><div>D</div>
+                            </div>
+                            <div class="calendar-days" id="calendar-days">
+                                </div>
                         </div>
 
 						<header class="major"><h2>Meteo</h2></header>
@@ -294,7 +340,43 @@
 				</div>
 			</div>
 		</div>
+
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/main.js"></script>
+        
+        <script>
+            function renderCalendar() {
+                const date = new Date();
+                const month = date.getMonth();
+                const year = date.getFullYear();
+
+                const monthNames = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
+                document.getElementById("month-name").innerText = `${monthNames[month]} ${year}`;
+
+                const firstDay = new Date(year, month, 1).getDay(); // 0 è Domenica
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+                let daysHtml = "";
+                // Adattamento per far iniziare la settimana di Lunedì
+                let startDay = firstDay === 0 ? 6 : firstDay - 1;
+
+                // Spazi vuoti prima del primo giorno del mese
+                for (let i = 0; i < startDay; i++) {
+                    daysHtml += `<div></div>`; 
+                }
+                
+                // Giorni del mese
+                for (let i = 1; i <= daysInMonth; i++) {
+                    if (i === date.getDate()) {
+                        daysHtml += `<div class="today">${i}</div>`; // Evidenzia oggi
+                    } else {
+                        daysHtml += `<div>${i}</div>`;
+                    }
+                }
+                document.getElementById("calendar-days").innerHTML = daysHtml;
+            }
+            // Avvia il calendario appena si carica la pagina
+            renderCalendar();
+        </script>
 	</body>
 </html>
