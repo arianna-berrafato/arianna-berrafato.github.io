@@ -324,11 +324,14 @@
                         </div>
 
 						<header class="major"><h2>Meteo</h2></header>
-<div class="aesthetic-calendar" style="text-align: center; padding: 1.5em !important; margin-bottom: 2em; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-    <div style="color: var(--espresso); font-weight: bold; font-size: 1.2em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px;">Siracusa</div>
-    <div id="custom-weather" style="font-size: 2.2em; color: var(--espresso); font-weight: bold; line-height: 1;">
-        <span style="font-size: 0.5em; color: var(--peony);">Caricamento...</span>
+<div class="aesthetic-calendar" style="text-align: center; padding: 1em 1.5em !important; margin-bottom: 2em; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;">
+    <div style="color: var(--espresso); font-weight: bold; font-size: 1.3em; text-transform: uppercase; letter-spacing: 2px;">Siracusa</div>
+    
+    <div id="weather-display" style="font-size: 3em; display: flex; align-items: center; gap: 15px; color: var(--espresso); font-weight: bold;">
+        <span id="weather-icon-container" style="color: var(--peony); display: flex; align-items: center; justify-content: center; width: 1.2em; height: 1.2em;">...</span>
+        <span id="weather-temp-container">...</span>
     </div>
+</div>
     
     <script>
         // Chiamata invisibile per prendere i dati nudi e crudi (non può essere bloccata)
