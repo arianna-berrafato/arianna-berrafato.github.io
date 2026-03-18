@@ -25,7 +25,7 @@
             }
 
             body {
-                font-size: 20px !important; 
+                font-size: 16px !important; /* Riportato allo standard web per un ingombro perfetto */
             }
 
 			body, #wrapper, #main, .inner, #sidebar, #sidebar > .inner { 
@@ -41,15 +41,15 @@
 			h1, h2, h3, h4, h5, h6, strong, b, .logo, #header strong { color: var(--espresso) !important; }
 			p, li { 
                 color: #4b3621 !important; 
-                font-size: 1.15em !important; 
-                line-height: 1.45 !important; 
+                font-size: 1.05em !important; 
+                line-height: 1.6 !important; /* Leggermente aumentato per dare respiro al testo più piccolo */
                 margin-bottom: 0.8em !important; 
             }
             
-            h1 { font-size: 3.4em !important; margin-bottom: 0.1em !important; line-height: 1.1 !important; }
-            h2 { font-size: 2.3em !important; margin-bottom: 0.5em !important; }
-            h3 { font-size: 1.6em !important; margin-bottom: 0.2em !important;}
-            header#header .logo { font-size: 1.4em !important; }
+            h1 { font-size: 2.8em !important; margin-bottom: 0.2em !important; line-height: 1.1 !important; }
+            h2 { font-size: 1.8em !important; margin-bottom: 0.5em !important; }
+            h3 { font-size: 1.3em !important; margin-bottom: 0.2em !important;}
+            header#header .logo { font-size: 1.1em !important; }
 
 			/* Linee Divisorie */
 			#header, section, .major h2 { border-bottom-color: var(--peony) !important; }
@@ -68,14 +68,14 @@
                 background-color: #ffffff !important;
                 border: 2px solid var(--peony) !important; 
                 padding: 1.5em 2em !important;
-                margin: 4.5em 0 0 0 !important; 
+                margin: 3.5em 0 0 0 !important; 
                 border-radius: 15px !important; 
                 box-shadow: 4px 4px 0px var(--peony) !important;
                 font-style: italic !important;
                 position: relative !important;
             }
             .aesthetic-quote p {
-                font-size: 1.25em !important;
+                font-size: 1.15em !important;
                 color: var(--espresso) !important;
                 margin: 0 !important;
                 line-height: 1.4 !important;
@@ -111,7 +111,7 @@
 				gap: 20px !important;
 			}
 			.custom-blocks article .icon {
-				font-size: 2em !important;
+				font-size: 1.8em !important;
 				margin: 0 !important;
 			}
 			.custom-blocks article .content { flex: 1 !important; }
@@ -142,7 +142,7 @@
                 text-align: center;
                 color: var(--espresso);
                 font-weight: bold;
-                font-size: 1.3em;
+                font-size: 1.2em;
                 margin-bottom: 15px;
                 text-transform: uppercase;
                 letter-spacing: 2px;
@@ -154,7 +154,7 @@
                 color: var(--peony);
                 font-weight: bold;
                 margin-bottom: 10px;
-                font-size: 1.1em;
+                font-size: 1em;
             }
             .calendar-days {
                 display: grid;
@@ -162,13 +162,13 @@
                 text-align: center;
                 gap: 5px;
                 color: var(--espresso);
-                font-size: 1.1em;
+                font-size: 1em;
             }
             .calendar-days div {
                 padding: 5px 0;
                 border-radius: 50%;
-                width: 35px;
-                height: 35px;
+                width: 30px;
+                height: 30px;
                 margin: 0 auto;
                 display: flex;
                 align-items: center;
@@ -191,7 +191,7 @@
             .audio-wrapper .track-name {
                 display: block;
                 color: var(--peony);
-                font-size: 1.2em;
+                font-size: 1.1em;
                 margin-bottom: 10px;
                 letter-spacing: 1px;
             }
@@ -228,7 +228,7 @@
 						<div class="content">
 							<header>
 								<h1>Arianna Berrafato</h1>
-								<p style="font-size: 1.4em !important; color: var(--espresso) !important; margin-bottom: 0 !important;">Lettere Moderne | Digital Specialist | Sales Expert</p>
+								<p style="font-size: 0.9em !important; letter-spacing: 2px; color: var(--espresso) !important; margin-bottom: 0 !important; margin-top: 0.5em !important;">LETTERE MODERNE | DIGITAL SPECIALIST | SALES EXPERT</p>
 							</header>
                             
 							<p style="margin-top: 1.5em !important;">Laureata in Lettere Moderne presso l'Università di Catania. Motivata e flessibile, ho maturato solide competenze nel settore retail di alto livello, unendo precisione organizzativa e doti comunicative.</p>
@@ -325,9 +325,9 @@
 
 						<header class="major"><h2>Meteo</h2></header>
                         <div class="aesthetic-calendar" style="text-align: center; padding: 1em 1.5em !important; margin-bottom: 2em; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;">
-                            <div style="color: var(--espresso); font-weight: bold; font-size: 1.3em; text-transform: uppercase; letter-spacing: 2px;">Siracusa</div>
+                            <div style="color: var(--espresso); font-weight: bold; font-size: 1.2em; text-transform: uppercase; letter-spacing: 2px;">Siracusa</div>
                             
-                            <div id="weather-display" style="font-size: 3em; display: flex; align-items: center; gap: 15px; color: var(--espresso); font-weight: bold;">
+                            <div id="weather-display" style="font-size: 2.5em; display: flex; align-items: center; gap: 15px; color: var(--espresso); font-weight: bold;">
                                 <span id="weather-icon-container" style="color: var(--peony); display: flex; align-items: center; justify-content: center; width: 1.2em; height: 1.2em;">...</span>
                                 <span id="weather-temp-container">...</span>
                             </div>
