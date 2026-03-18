@@ -324,28 +324,14 @@
                         </div>
 
 						<header class="major"><h2>Meteo</h2></header>
-<div class="aesthetic-calendar" style="text-align: center; padding: 1em 1.5em !important; margin-bottom: 2em; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;">
-    <div style="color: var(--espresso); font-weight: bold; font-size: 1.3em; text-transform: uppercase; letter-spacing: 2px;">Siracusa</div>
-    
-    <div id="weather-display" style="font-size: 3em; display: flex; align-items: center; gap: 15px; color: var(--espresso); font-weight: bold;">
-        <span id="weather-icon-container" style="color: var(--peony); display: flex; align-items: center; justify-content: center; width: 1.2em; height: 1.2em;">...</span>
-        <span id="weather-temp-container">...</span>
-    </div>
-</div>
-    
-    <script>
-        // Chiamata invisibile per prendere i dati nudi e crudi (non può essere bloccata)
-        fetch('https://wttr.in/Siracusa?format=%c+%t')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('custom-weather').innerText = data.trim();
-            })
-            .catch(() => {
-                // Nel caso remoto in cui ci sia un errore di rete
-                document.getElementById('custom-weather').innerText = '☀️ +20°C';
-            });
-    </script>
-</div>
+                        <div class="aesthetic-calendar" style="text-align: center; padding: 1em 1.5em !important; margin-bottom: 2em; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;">
+                            <div style="color: var(--espresso); font-weight: bold; font-size: 1.3em; text-transform: uppercase; letter-spacing: 2px;">Siracusa</div>
+                            
+                            <div id="weather-display" style="font-size: 3em; display: flex; align-items: center; gap: 15px; color: var(--espresso); font-weight: bold;">
+                                <span id="weather-icon-container" style="color: var(--peony); display: flex; align-items: center; justify-content: center; width: 1.2em; height: 1.2em;">...</span>
+                                <span id="weather-temp-container">...</span>
+                            </div>
+                        </div>
 						
 						<header class="major"><h2>Playlist</h2></header>
                         <div class="audio-wrapper">
@@ -395,6 +381,42 @@
             }
             // Avvia il calendario appena si carica la pagina
             renderCalendar();
+        </script>
+
+        <script>
+            // Chiediamo solo la descrizione nuda del meteo (es. Clear, Rain) e la temperatura
+            fetch('https://wttr.in/Siracusa?format=%C|%t')
+                .then(response => response.text())
+                .then(data => {
+                    const parts = data.split('|');
+                    const condition = parts[0].trim().toLowerCase();
+                    const temperature = parts[1].trim();
+                    
+                    let iconClass = 'fa-sun'; // Sole predefinito (per Clear, Mostly Sunny)
+
+                    // Mappatura delle condizioni testuali alle icone FontAwesome Solid
+                    if (condition.includes('cloud')) {
+                        iconClass = 'fa-cloud'; // Nuvoloso
+                    } else if (condition.includes('rain') || condition.includes('drizzle')) {
+                        iconClass = 'fa-cloud-showers-heavy'; // Pioggia
+                    } else if (condition.includes('thunder')) {
+                        iconClass = 'fa-cloud-bolt'; // Temporale
+                    } else if (condition.includes('snow') || condition.includes('ice')) {
+                        iconClass = 'fa-snowflake'; // Neve
+                    } else if (condition.includes('mist') || condition.includes('fog')) {
+                        iconClass = 'fa-smog'; // Nebbia
+                    }
+
+                    // Inseriamo l'icona FontAwesome (prenderà il colore Peony del contenitore)
+                    document.getElementById('weather-icon-container').innerHTML = `<i class="icon solid ${iconClass}"></i>`;
+                    // Inseriamo la temperatura
+                    document.getElementById('weather-temp-container').innerText = temperature;
+                })
+                .catch(() => {
+                    // Fallback estetico in caso di errore (Sole Peony + +20°C)
+                    document.getElementById('weather-icon-container').innerHTML = `<i class="icon solid fa-sun"></i>`;
+                    document.getElementById('weather-temp-container').innerText = '+20°C';
+                });
         </script>
 	</body>
 </html>
