@@ -6,34 +6,55 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			/* --- TOCCO ROSA PASTELLO E PERSONALIZZAZIONE --- */
+			/* --- PALETTE COORDINATA: PEONY & ESPRESSO --- */
 			:root {
-				--accent-color: #f8c8dc; /* Rosa Pastello */
-				--text-strong: #5a5a5a;
+				--peony: #F4C9D6;
+				--espresso: #3E2723;
+				--beige-bg: #FCF8F5; /* Un beige chiarissimo per lo sfondo */
 			}
-			
-			/* Cursore Stellina */
+
+			/* Sfondo della pagina */
+			body, #wrapper, #main { 
+				background-color: var(--beige-bg) !important; 
+			}
+
+			/* Cursore Personalizzato Stellina Rosa */
 			html, body { 
-				cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:hotpink;font-size:24px;'><text y='50%'>✨</text></svg>"), auto !important; 
+				cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:%23F4C9D6;font-size:24px;'><text y='50%'>✨</text></svg>"), auto !important; 
 			}
 
-			/* Scrollbar Rosa */
-			::-webkit-scrollbar { width: 10px; }
-			::-webkit-scrollbar-track { background: #fff5f8; }
-			::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 10px; }
+			/* Barra di scorrimento coordinata */
+			::-webkit-scrollbar { width: 12px; }
+			::-webkit-scrollbar-track { background: var(--beige-bg); }
+			::-webkit-scrollbar-thumb { 
+				background: var(--peony); 
+				border: 3px solid var(--beige-bg);
+				border-radius: 10px; 
+			}
 
-			/* Blocchi Omogenei */
+			/* Titoli e Dettagli in Espresso */
+			h1, h2, h3, strong, #header strong { 
+				color: var(--espresso) !important; 
+			}
+
+			/* Blocchi con bordo Peony e sfondo Espresso leggero per i testi */
 			.features article { 
-				border: 1px solid var(--accent-color); 
-				background: #fffafa; 
-				border-radius: 12px; 
-				padding: 2em;
-				transition: transform 0.3s;
+				border: 2px solid var(--peony) !important; 
+				background: white; 
+				border-radius: 15px; 
 			}
-			.features article:hover { transform: translateY(-5px); }
-			
-			#header strong { color: #d4a5b9; }
-			h2 { border-bottom: 3px solid var(--accent-color) !important; display: inline-block; padding-bottom: 5px; }
+
+			/* Linee di separazione Rosa Peony */
+			h2 { border-bottom: 3px solid var(--peony) !important; }
+			#header { border-bottom: 3px solid var(--peony) !important; }
+
+			/* Pulsanti coordinati */
+			.button.big { 
+				background-color: var(--peony) !important; 
+				color: var(--espresso) !important; 
+				box-shadow: none;
+				border: none;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -49,15 +70,15 @@
 						<div class="content">
 							<header>
 								<h1>Ciao, sono Arianna</h1>
-								<p>Lettere Moderne | Digital Enthusiast | Sales Specialist</p>
+								<p style="color: var(--espresso);">Lettere Moderne | Digital Enthusiast | Sales Specialist</p>
 							</header>
-							<p>Laureata in Lettere Moderne, motivata e flessibile, con una forte passione per l'arte e l'insegnamento. Ho maturato esperienza nel settore delle vendite e del servizio al cliente, in particolare nei settori dell'abbigliamento e della gioielleria. [cite: 7, 8]</p>
+							<p>Laureata in Lettere Moderne, motivata e flessibile. Ho maturato esperienza nel settore delle vendite (Pandora, Foot Locker) e del servizio al cliente.</p>
 							<ul class="actions">
 								<li><a href="mailto:arianna.berrafato@gmail.com" class="button big">Contattami</a></li>
 							</ul>
 						</div>
 						<span class="image object">
-							<img src="images/io.jpg" alt="Arianna Berrafato" style="border-radius: 20px; border: 5px solid #f8c8dc;" />
+							<img src="images/io.jpg" alt="Arianna Berrafato" style="border: 8px solid var(--peony); border-radius: 20px;" />
 						</span>
 					</section>
 
@@ -65,28 +86,12 @@
 						<header class="major"><h2>Esperienze Lavorative</h2></header>
 						<div class="features">
 							<article>
-								<span class="icon solid fa-gem"></span>
-								<div class="content">
-									<h3>Addetta Vendite - Pandora Jewelry</h3>
-									<p><strong>Ago 2024 - Giu 2025</strong><br>
-									Servizio clienti personalizzato, gestione vendite, magazzino e allestimento vetrine in gioielleria di fascia medio-alta. [cite: 34, 35, 36, 37]</p>
-								</div>
+								<h3>Pandora Jewelry</h3>
+								<p>Addetta Vendite (Ago 2024 - Giu 2025). Servizio clienti e gestione magazzino.</p>
 							</article>
 							<article>
-								<span class="icon solid fa-shoe-prints"></span>
-								<div class="content">
-									<h3>Addetta Vendite - Foot Locker</h3>
-									<p><strong>Lug 2023 - Ott 2023</strong><br>
-									Supporto alla clientela, gestione cassa e chiusura giornaliera, cura degli spazi espositivi. [cite: 38, 39, 40]</p>
-								</div>
-							</article>
-							<article>
-								<span class="icon solid fa-hamburger"></span>
-								<div class="content">
-									<h3>Crew Member - McDonald's</h3>
-									<p><strong>Ago 2022 - Set 2022</strong><br>
-									Preparazione alimentare e servizio al cliente nel rispetto degli standard di igiene e sicurezza. [cite: 42, 43]</p>
-								</div>
+								<h3>Foot Locker</h3>
+								<p>Addetta Vendite (Lug 2023 - Ott 2023). Supporto clientela e gestione cassa.</p>
 							</article>
 						</div>
 					</section>
@@ -95,14 +100,12 @@
 						<header class="major"><h2>Formazione & Skill</h2></header>
 						<div class="posts">
 							<article>
-								<h3>🎓 Istruzione</h3>
-								<p><strong>Laurea Triennale in Lettere Moderne</strong><br>Università di Catania (2020-2024). Votazione: 96/110. [cite: 26, 27, 28]<br>
-								<strong>Diploma Liceo Scientifico</strong><br>Liceo Einaudi, Siracusa (Indirizzo Informatico). [cite: 29, 32]</p>
+								<h3>🎓 Università</h3>
+								<p>Laurea in Lettere Moderne presso l'Università di Catania (96/110).</p>
 							</article>
 							<article>
-								<h3>🌍 Lingue e Tech</h3>
-								<p><strong>Inglese:</strong> Fluente (IELTS B2 conseguito a Malta). [cite: 21, 22]<br>
-								<strong>Digital Skills:</strong> Padronanza Pacchetto Office, basi di programmazione, gestione GitHub. [cite: 15, 16]</p>
+								<h3>🌍 Lingue</h3>
+								<p>Italiano (madrelingua). Inglese (IELTS B2). Basi di Spagnolo e Francese.</p>
 							</article>
 						</div>
 					</section>
@@ -118,24 +121,18 @@
 							<a class="weatherwidget-io" href="https://forecast7.com/it/37initial0815initial29/siracusa/" data-label_1="SIRACUSA" data-label_2="WEATHER" data-theme="pure" >SIRACUSA WEATHER</a>
 							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');</script>
 						</div>
-						
-						<p>🎵 Current Vibe:</p>
+						<p style="color: var(--espresso);">🎵 Current Vibe:</p>
 						<audio controls style="width: 100%; height: 30px;">
 							<source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mpeg">
 						</audio>
 					</section>
-
 					<footer id="footer">
-						<p class="copyright">&copy; Arianna Berrafato. Built with ✨ for Digital Humanities.</p>
+						<p class="copyright" style="color: var(--espresso);">&copy; Arianna Berrafato. Built with ✨</p>
 					</footer>
 				</div>
 			</div>
 		</div>
-
 		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 	</body>
 </html>
