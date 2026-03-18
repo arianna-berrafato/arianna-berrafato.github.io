@@ -190,29 +190,34 @@
 				border: 4px solid var(--beige-bg) !important; 
 				border-radius: 10px !important; 
 			}
-			/* --- FIX MOBILE: MOSTRA WIDGET IN FONDO --- */
+			/* --- FIX MOBILE DEFINITIVO: TUTTO IN COLONNA --- */
 			@media screen and (max-width: 1280px) {
+				body, html {
+					overflow-x: hidden !important; /* Impedisce di scorrere a destra e sinistra */
+				}
 				#wrapper {
 					display: flex !important;
-					flex-direction: column !important; /* Questo costringe le sezioni a mettersi una sopra l'altra */
+					flex-direction: column !important;
+					width: 100% !important;
 				}
 				#main {
 					width: 100% !important;
+					margin: 0 !important; /* Toglie lo spazio vuoto laterale */
+					padding: 0 !important;
 				}
 				#sidebar {
-					display: block !important;
-					position: relative !important;
+					position: static !important; /* Sgancia la barra dal lato dello schermo */
 					width: 100% !important;
+					display: block !important;
 					transform: none !important;
 					visibility: visible !important;
 					border-left: none !important;
 					border-top: 5px solid var(--peony) !important;
-					margin-top: 3em !important;
+					margin: 0 !important;
 					padding-top: 2em !important;
 					height: auto !important;
-					padding-bottom: 3em !important;
 				}
-				/* Nasconde eventuali residui del bottone menù */
+				/* Nasconde eventuali bottoni residui del menù a tendina */
 				a[href="#sidebar"], .toggle {
 					display: none !important;
 				}
