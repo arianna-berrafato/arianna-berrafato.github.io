@@ -2271,3 +2271,14 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+/* --- Personalizzazione Estetica --- */
+
+/* Barra di scorrimento colorata */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #f56a6a; border-radius: 5px; }
+
+/* Cursore a stellina (molto Tumblr!) */
+html, body {
+    cursor: url('https://cur.cursors-4u.net/others/oth-9/oth816.cur'), auto;
+}
