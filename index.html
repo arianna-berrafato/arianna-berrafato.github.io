@@ -1,125 +1,141 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Arianna Berrafato | Personal Site</title>
+		<title>CV Arianna Berrafato</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			/* Cursore personalizzato (Stellina) */
-			html, body {
-				cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>✨</text></svg>"), auto !important;
+			/* --- TOCCO ROSA PASTELLO E PERSONALIZZAZIONE --- */
+			:root {
+				--accent-color: #f8c8dc; /* Rosa Pastello */
+				--text-strong: #5a5a5a;
 			}
-			/* Barra di scorrimento colorata stile Tumblr */
+			
+			/* Cursore Stellina */
+			html, body { 
+				cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:hotpink;font-size:24px;'><text y='50%'>✨</text></svg>"), auto !important; 
+			}
+
+			/* Scrollbar Rosa */
 			::-webkit-scrollbar { width: 10px; }
-			::-webkit-scrollbar-track { background: #f1f1f1; }
-			::-webkit-scrollbar-thumb { background: #f56a6a; border-radius: 5px; }
+			::-webkit-scrollbar-track { background: #fff5f8; }
+			::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 10px; }
+
+			/* Blocchi Omogenei */
+			.features article { 
+				border: 1px solid var(--accent-color); 
+				background: #fffafa; 
+				border-radius: 12px; 
+				padding: 2em;
+				transition: transform 0.3s;
+			}
+			.features article:hover { transform: translateY(-5px); }
+			
+			#header strong { color: #d4a5b9; }
+			h2 { border-bottom: 3px solid var(--accent-color) !important; display: inline-block; padding-bottom: 5px; }
 		</style>
 	</head>
 	<body class="is-preload">
-
 		<div id="wrapper">
+			<div id="main">
+				<div class="inner">
 
-				<div id="main">
-						<div class="inner">
+					<header id="header">
+						<a href="index.html" class="logo"><strong>DIGITAL CV</strong> | Arianna Berrafato</a>
+					</header>
 
-							<header id="header">
-									<a href="index.html" class="logo"><strong>Arianna</strong> Berrafato</a>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
-									</ul>
-								</header>
-
-							<section id="banner">
-									<div class="content">
-										<header>
-											<h1>Ciao, sono Arianna<br />
-											e questo è il mio mondo</h1>
-											<p>Benvenuti nel mio spazio creativo e professionale</p>
-										</header>
-										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas.</p>
-										<ul class="actions">
-											<li><a href="#" class="button big">Scopri di più</a></li>
-										</ul>
-									</div>
-									<span class="image object">
-										<img src="images/pic10.jpg" alt="" />
-									</span>
-								</section>
-
-							<section>
-									<header class="major">
-										<h2>Competenze</h2>
-									</header>
-									<div class="features">
-										<article>
-											<span class="icon fa-gem"></span>
-											<div class="content">
-												<h3>Creatività</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-paper-plane"></span>
-											<div class="content">
-												<h3>Comunicazione</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum.</p>
-											</div>
-										</article>
-									</div>
-								</section>
-
+					<section id="banner">
+						<div class="content">
+							<header>
+								<h1>Ciao, sono Arianna</h1>
+								<p>Lettere Moderne | Digital Enthusiast | Sales Specialist</p>
+							</header>
+							<p>Laureata in Lettere Moderne, motivata e flessibile, con una forte passione per l'arte e l'insegnamento. Ho maturato esperienza nel settore delle vendite e del servizio al cliente, in particolare nei settori dell'abbigliamento e della gioielleria. [cite: 7, 8]</p>
+							<ul class="actions">
+								<li><a href="mailto:arianna.berrafato@gmail.com" class="button big">Contattami</a></li>
+							</ul>
 						</div>
-					</div>
+						<span class="image object">
+							<img src="images/pic10.jpg" alt="Arianna Berrafato" style="border-radius: 20px; border: 5px solid #f8c8dc;" />
+						</span>
+					</section>
 
-				<div id="sidebar">
-						<div class="inner">
-
-							<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="index.html">Homepage</a></li>
-										<li><a href="generic.html">Chi Sono</a></li>
-										<li><a href="elements.html">Portfolio</a></li>
-									</ul>
-								</nav>
-
-							<section>
-									<header class="major">
-										<h2>My World</h2>
-									</header>
-									<div style="margin-bottom: 25px;">
-										<a class="weatherwidget-io" href="https://forecast7.com/it/45initial46/milano/" data-label_1="MILANO" data-label_2="WEATHER" data-theme="pure" >MILANO WEATHER</a>
-										<script>
-										!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-										</script>
-									</div>
-									<p>🎵 Current Vibe:</p>
-									<audio controls style="width: 100%;">
-										<source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mpeg">
-									</audio>
-								</section>
-
-							<footer id="footer">
-									<p class="copyright">&copy; Arianna Berrafato. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
-
+					<section>
+						<header class="major"><h2>Esperienze Lavorative</h2></header>
+						<div class="features">
+							<article>
+								<span class="icon solid fa-gem"></span>
+								<div class="content">
+									<h3>Addetta Vendite - Pandora Jewelry</h3>
+									<p><strong>Ago 2024 - Giu 2025</strong><br>
+									Servizio clienti personalizzato, gestione vendite, magazzino e allestimento vetrine in gioielleria di fascia medio-alta. [cite: 34, 35, 36, 37]</p>
+								</div>
+							</article>
+							<article>
+								<span class="icon solid fa-shoe-prints"></span>
+								<div class="content">
+									<h3>Addetta Vendite - Foot Locker</h3>
+									<p><strong>Lug 2023 - Ott 2023</strong><br>
+									Supporto alla clientela, gestione cassa e chiusura giornaliera, cura degli spazi espositivi. [cite: 38, 39, 40]</p>
+								</div>
+							</article>
+							<article>
+								<span class="icon solid fa-hamburger"></span>
+								<div class="content">
+									<h3>Crew Member - McDonald's</h3>
+									<p><strong>Ago 2022 - Set 2022</strong><br>
+									Preparazione alimentare e servizio al cliente nel rispetto degli standard di igiene e sicurezza. [cite: 42, 43]</p>
+								</div>
+							</article>
 						</div>
-					</div>
+					</section>
 
+					<section>
+						<header class="major"><h2>Formazione & Skill</h2></header>
+						<div class="posts">
+							<article>
+								<h3>🎓 Istruzione</h3>
+								<p><strong>Laurea Triennale in Lettere Moderne</strong><br>Università di Catania (2020-2024). Votazione: 96/110. [cite: 26, 27, 28]<br>
+								<strong>Diploma Liceo Scientifico</strong><br>Liceo Einaudi, Siracusa (Indirizzo Informatico). [cite: 29, 32]</p>
+							</article>
+							<article>
+								<h3>🌍 Lingue e Tech</h3>
+								<p><strong>Inglese:</strong> Fluente (IELTS B2 conseguito a Malta). [cite: 21, 22]<br>
+								<strong>Digital Skills:</strong> Padronanza Pacchetto Office, basi di programmazione, gestione GitHub. [cite: 15, 16]</p>
+							</article>
+						</div>
+					</section>
+
+				</div>
 			</div>
 
-		<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<div id="sidebar">
+				<div class="inner">
+					<section>
+						<header class="major"><h2>My World</h2></header>
+						<div style="margin-bottom: 20px;">
+							<a class="weatherwidget-io" href="https://forecast7.com/it/37initial0815initial29/siracusa/" data-label_1="SIRACUSA" data-label_2="WEATHER" data-theme="pure" >SIRACUSA WEATHER</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');</script>
+						</div>
+						
+						<p>🎵 Current Vibe:</p>
+						<audio controls style="width: 100%; height: 30px;">
+							<source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mpeg">
+						</audio>
+					</section>
 
+					<footer id="footer">
+						<p class="copyright">&copy; Arianna Berrafato. Built with ✨ for Digital Humanities.</p>
+					</footer>
+				</div>
+			</div>
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 	</body>
 </html>
