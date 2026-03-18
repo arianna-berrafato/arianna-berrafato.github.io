@@ -10,7 +10,7 @@
 			:root {
 				--peony: #F4C9D6;
 				--espresso: #3E2723;
-				--beige-bg: #FCF8F5;
+				--beige-bg: #F5EFE6; /* Beige più intenso per contrastare con i box bianchi */
 			}
 
 			/* Sfondo e Reset Colori */
@@ -18,25 +18,25 @@
 				background-color: var(--beige-bg) !important; 
 			}
 
-			/* CURSORE STELLINA ESPRESSO (Più visibile) */
+			/* CURSORE STELLINA ESPRESSO */
 			html, body { 
 				cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:%233E2723;font-size:24px;'><text y='50%'>✨</text></svg>"), auto !important; 
 			}
 
-			/* Titoli e Testi */
+			/* Titoli e Testi in Espresso */
 			h1, h2, h3, h4, h5, h6, strong, b, .logo, #header strong { 
 				color: var(--espresso) !important; 
 			}
-			p, li { color: #5a4033 !important; }
+			p, li { color: #4b3621 !important; }
 
-			/* RIMOZIONE TOTALE DEL ROSSO */
-			#header, section, .major h2, .mini-posts article { 
+			/* RIMOZIONE ROSSO E LINEE PEONY */
+			#header, section, .major h2 { 
 				border-bottom-color: var(--peony) !important; 
 			}
 			.major h2::after { background-color: var(--peony) !important; }
             #sidebar { border-left: 5px solid var(--peony) !important; }
 
-			/* BOX ESPERIENZE (Stile Sticker) */
+			/* BOX ESPERIENZE BIANCHI (Risaltano sul beige) */
 			.features article { 
 				background: #ffffff !important;
 				border: 3px solid var(--peony) !important; 
@@ -44,9 +44,7 @@
 				padding: 2.5em !important;
 				margin-bottom: 2em !important;
 				box-shadow: 8px 8px 0px var(--peony) !important;
-				transition: all 0.3s ease;
 			}
-			.features article:hover { transform: translate(-4px, -4px); box-shadow: 12px 12px 0px var(--peony) !important; }
 
 			/* BOTTONE SCRIVIMI */
 			.button.big { 
@@ -57,10 +55,6 @@
 				font-weight: bold !important;
 				box-shadow: 4px 4px 0px var(--espresso) !important;
 			}
-			.button.big:hover { background-color: #fbd7e2 !important; transform: scale(1.05); }
-
-			/* SCROLLBAR */
-			::-webkit-scrollbar-thumb { background: var(--peony) !important; border: 2px solid var(--beige-bg); border-radius: 10px; }
 		</style>
 	</head>
 	<body class="is-preload">
@@ -78,7 +72,7 @@
 								<h1>Arianna Berrafato</h1>
 								<p>Lettere Moderne | Digital Specialist | Sales Expert</p>
 							</header>
-							<p>Laureata in Lettere Moderne (96/110) presso l'Università di Catania[cite: 26, 27, 28]. Ho maturato solide competenze nel settore retail di alto livello (Pandora, Foot Locker), unendo precisione organizzativa e doti comunicative[cite: 34, 38].</p>
+							<p>Laureata in Lettere Moderne presso l'Università di Catania. Motivata e flessibile, ho maturato solide competenze nel settore retail di alto livello, unendo precisione e doti comunicative.</p>
 							<ul class="actions">
 								<li><a href="mailto:arianna.berrafato@gmail.com" class="button big">CONTATTAMI</a></li>
 							</ul>
@@ -93,27 +87,33 @@
 						<div class="features">
 							<article>
 								<h3>💍 Pandora Jewelry</h3>
-								<p><b>Addetta Vendite (2024 - 2025)</b> [cite: 34]<br>
-								Assistenza clienti personalizzata, gestione delle vendite e del magazzino, cura dell'allestimento vetrine[cite: 35, 36, 37].</p>
+								<p><b>Addetta Vendite (2024 - 2025)</b><br>
+								Servizio clienti personalizzato, gestione vendite e magazzino, allestimento vetrine e mantenimento dell'ordine in negozio.</p>
 							</article>
 							<article>
 								<h3>👟 Foot Locker</h3>
-								<p><b>Addetta Vendite (2023)</b> [cite: 38, 39]<br>
-								Supporto alla clientela, gestione cassa e chiusura giornaliera del punto vendita[cite: 40].</p>
+								<p><b>Addetta Vendite (2023)</b><br>
+								Supporto alla clientela, gestione cassa e chiusura giornaliera, collaborazione agli obiettivi di vendita del team.</p>
+							</article>
+							<article>
+								<h3>🍔 McDonald's</h3>
+								<p><b>Crew Member (2022)</b><br>
+								Preparazione alimentare e servizio al cliente nel rispetto degli standard di igiene. Collaborazione in cucina e in sala.</p>
 							</article>
 						</div>
 					</section>
 
 					<section>
-						<header class="major"><h2>Istruzione & Skill</h2></header>
+						<header class="major"><h2>Formazione & Lingue</h2></header>
 						<div class="posts">
 							<article>
-								<h3>🎓 Università di Catania</h3>
-								<p>Laurea Triennale in Lettere Moderne (2020-2024). Focus: linguistica e studi culturali[cite: 26, 27, 29].</p>
+								<h3>🎓 Istruzione</h3>
+								<p><b>Laurea in Lettere Moderne</b> (96/110) - Università di Catania.<br>
+								<b>Diploma Liceo Scientifico</b> (80/100) - Indirizzo Scientifico-Informatico.</p>
 							</article>
 							<article>
-								<h3>🌍 Lingue Straniere</h3>
-								<p>Inglese Fluente (IELTS B2 conseguito a Malta). Basi di Francese e Spagnolo[cite: 21, 22, 23, 24].</p>
+								<h3>🌍 Lingue</h3>
+								<p>Italiano (Madrelingua), Inglese (IELTS B2), Francese e Spagnolo (Base).</p>
 							</article>
 						</div>
 					</section>
@@ -126,7 +126,7 @@
 					<section>
 						<header class="major"><h2>Meteo Siracusa</h2></header>
 						<div style="margin-bottom: 2em;">
-							<a class="weatherwidget-io" href="https://forecast7.com/it/37initial0815initial29/siracusa/" data-label_1="SIRACUSA" data-label_2="METEO" data-theme="pure" data-basecolor="#FCF8F5" data-accent="#F4C9D6" data-textcolor="#3E2723">SIRACUSA WEATHER</a>
+							<a class="weatherwidget-io" href="https://forecast7.com/it/37initial0815initial29/siracusa/" data-label_1="SIRACUSA" data-label_2="METEO" data-theme="pure" data-basecolor="#F5EFE6" data-accent="#F4C9D6" data-textcolor="#3E2723">SIRACUSA WEATHER</a>
 							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');</script>
 						</div>
 						
@@ -136,9 +136,6 @@
 							<source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mpeg">
 						</audio>
 					</section>
-					<footer id="footer">
-						<p class="copyright">&copy; Arianna Berrafato. Digital CV 2026. [cite: 1]</p>
-					</footer>
 				</div>
 			</div>
 		</div>
