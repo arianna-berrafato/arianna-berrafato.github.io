@@ -25,7 +25,7 @@
             }
 
             body {
-                font-size: 16px !important; /* Riportato allo standard web per un ingombro perfetto */
+                font-size: 16px !important; 
             }
 
 			body, #wrapper, #main, .inner, #sidebar, #sidebar > .inner { 
@@ -42,7 +42,7 @@
 			p, li { 
                 color: #4b3621 !important; 
                 font-size: 1.05em !important; 
-                line-height: 1.6 !important; /* Leggermente aumentato per dare respiro al testo più piccolo */
+                line-height: 1.6 !important; 
                 margin-bottom: 0.8em !important; 
             }
             
@@ -59,9 +59,10 @@
             /* RIMOZIONE FORZATA DI TUTTE LE LINEE TRATTEGGIATE E BORDI INDESIDERATI */
             #sidebar section, #sidebar hr, .alt { border: none !important; border-top: none !important; border-bottom: none !important; box-shadow: none !important; outline: none !important; }
 
-            /* FIX COLORE ICONE */
-            .icon, .icon::before, .icons li a { color: var(--peony) !important; }
-            .icons li a:hover { color: var(--espresso) !important; }
+            /* --- FIX COLORE ICONE: ORA SONO TUTTE ESPRESSO --- */
+            .icon, .icon::before, .icons li a { color: var(--espresso) !important; }
+            /* Al passaggio del mouse diventano Peony per un tocco chic */
+            .icons li a:hover { color: var(--peony) !important; }
 
             /* --- BLOCCO CITAZIONE AESTHETIC --- */
             .aesthetic-quote {
@@ -129,15 +130,16 @@
                 .small-blocks { grid-template-columns: 1fr !important; }
             }
 
-            /* --- NUOVO CALENDARIO ESTETICO --- */
-            .aesthetic-calendar {
+            /* --- WIDGET ESTETICI (Calendario, Meteo, Spotify) --- */
+            .aesthetic-widget {
                 background-color: #ffffff !important;
                 border: 2px solid var(--peony) !important;
                 border-radius: 15px !important;
-                padding: 1.5em !important;
                 margin-bottom: 2em;
                 box-shadow: 4px 4px 0px var(--peony) !important;
+                overflow: hidden !important; /* Mantiene gli angoli arrotondati anche per gli iframe */
             }
+            .calendar-inner { padding: 1.5em !important; }
             .calendar-header {
                 text-align: center;
                 color: var(--espresso);
@@ -178,25 +180,6 @@
                 background-color: var(--peony);
                 color: var(--espresso);
                 font-weight: bold;
-            }
-
-            /* PLAYER AUDIO ESPRESSO */
-            .audio-wrapper {
-                background-color: var(--espresso);
-                border-radius: 15px;
-                padding: 15px;
-                text-align: center;
-                box-shadow: 4px 4px 0px var(--peony);
-            }
-            .audio-wrapper .track-name {
-                display: block;
-                color: var(--peony);
-                font-size: 1.1em;
-                margin-bottom: 10px;
-                letter-spacing: 1px;
-            }
-            audio::-webkit-media-controls-panel {
-                background-color: var(--beige-bg) !important;
             }
 
 			/* BARRA DI SCORRIMENTO */
@@ -314,32 +297,32 @@
 
                         <header class="major"><h2>Calendario</h2></header>
                         
-                        <div class="aesthetic-calendar">
-                            <div class="calendar-header" id="month-name">Mese Anno</div>
-                            <div class="calendar-weekdays">
-                                <div>L</div><div>M</div><div>M</div><div>G</div><div>V</div><div>S</div><div>D</div>
-                            </div>
-                            <div class="calendar-days" id="calendar-days">
+                        <div class="aesthetic-widget">
+                            <div class="calendar-inner">
+                                <div class="calendar-header" id="month-name">Mese Anno</div>
+                                <div class="calendar-weekdays">
+                                    <div>L</div><div>M</div><div>M</div><div>G</div><div>V</div><div>S</div><div>D</div>
                                 </div>
+                                <div class="calendar-days" id="calendar-days"></div>
+                            </div>
                         </div>
 
 						<header class="major"><h2>Meteo</h2></header>
-                        <div class="aesthetic-calendar" style="text-align: center; padding: 1em 1.5em !important; margin-bottom: 2em; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;">
+                        <div class="aesthetic-widget" style="text-align: center; padding: 1.5em !important; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;">
                             <div style="color: var(--espresso); font-weight: bold; font-size: 1.2em; text-transform: uppercase; letter-spacing: 2px;">Siracusa</div>
                             
                             <div id="weather-display" style="font-size: 2.5em; display: flex; align-items: center; gap: 15px; color: var(--espresso); font-weight: bold;">
-                                <span id="weather-icon-container" style="color: var(--peony); display: flex; align-items: center; justify-content: center; width: 1.2em; height: 1.2em;">...</span>
+                                <span id="weather-icon-container" style="display: flex; align-items: center; justify-content: center; width: 1.2em; height: 1.2em;">...</span>
                                 <span id="weather-temp-container">...</span>
                             </div>
                         </div>
 						
 						<header class="major"><h2>Playlist</h2></header>
-                        <div class="audio-wrapper">
-                            <span class="track-name"><b>Titolo Canzone</b> - Artista</span>
-						    <audio controls style="width: 100%;">
-							    <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mpeg">
-						    </audio>
+                        
+                        <div class="aesthetic-widget" style="border-radius: 15px; overflow: hidden;">
+                            <iframe style="border-radius:0px; display: block;" src="https://open.spotify.com/embed/track/05ZACfljqNXfL1qEHUYQzE?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                         </div>
+
 					</section>
 				</div>
 			</div>
@@ -357,34 +340,29 @@
                 const monthNames = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
                 document.getElementById("month-name").innerText = `${monthNames[month]} ${year}`;
 
-                const firstDay = new Date(year, month, 1).getDay(); // 0 è Domenica
+                const firstDay = new Date(year, month, 1).getDay(); 
                 const daysInMonth = new Date(year, month + 1, 0).getDate();
 
                 let daysHtml = "";
-                // Adattamento per far iniziare la settimana di Lunedì
                 let startDay = firstDay === 0 ? 6 : firstDay - 1;
 
-                // Spazi vuoti prima del primo giorno del mese
                 for (let i = 0; i < startDay; i++) {
                     daysHtml += `<div></div>`; 
                 }
                 
-                // Giorni del mese
                 for (let i = 1; i <= daysInMonth; i++) {
                     if (i === date.getDate()) {
-                        daysHtml += `<div class="today">${i}</div>`; // Evidenzia oggi
+                        daysHtml += `<div class="today">${i}</div>`; 
                     } else {
                         daysHtml += `<div>${i}</div>`;
                     }
                 }
                 document.getElementById("calendar-days").innerHTML = daysHtml;
             }
-            // Avvia il calendario appena si carica la pagina
             renderCalendar();
         </script>
 
         <script>
-            // Chiediamo solo la descrizione nuda del meteo (es. Clear, Rain) e la temperatura
             fetch('https://wttr.in/Siracusa?format=%C|%t')
                 .then(response => response.text())
                 .then(data => {
@@ -392,28 +370,24 @@
                     const condition = parts[0].trim().toLowerCase();
                     const temperature = parts[1].trim();
                     
-                    let iconClass = 'fa-sun'; // Sole predefinito (per Clear, Mostly Sunny)
+                    let iconClass = 'fa-sun'; 
 
-                    // Mappatura delle condizioni testuali alle icone FontAwesome Solid
                     if (condition.includes('cloud')) {
-                        iconClass = 'fa-cloud'; // Nuvoloso
+                        iconClass = 'fa-cloud'; 
                     } else if (condition.includes('rain') || condition.includes('drizzle')) {
-                        iconClass = 'fa-cloud-showers-heavy'; // Pioggia
+                        iconClass = 'fa-cloud-showers-heavy'; 
                     } else if (condition.includes('thunder')) {
-                        iconClass = 'fa-cloud-bolt'; // Temporale
+                        iconClass = 'fa-cloud-bolt'; 
                     } else if (condition.includes('snow') || condition.includes('ice')) {
-                        iconClass = 'fa-snowflake'; // Neve
+                        iconClass = 'fa-snowflake'; 
                     } else if (condition.includes('mist') || condition.includes('fog')) {
-                        iconClass = 'fa-smog'; // Nebbia
+                        iconClass = 'fa-smog'; 
                     }
 
-                    // Inseriamo l'icona FontAwesome (prenderà il colore Peony del contenitore)
                     document.getElementById('weather-icon-container').innerHTML = `<i class="icon solid ${iconClass}"></i>`;
-                    // Inseriamo la temperatura
                     document.getElementById('weather-temp-container').innerText = temperature;
                 })
                 .catch(() => {
-                    // Fallback estetico in caso di errore (Sole Peony + +20°C)
                     document.getElementById('weather-icon-container').innerHTML = `<i class="icon solid fa-sun"></i>`;
                     document.getElementById('weather-temp-container').innerText = '+20°C';
                 });
