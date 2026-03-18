@@ -19,13 +19,13 @@
 				--beige-bg: #FDFBF7;
 			}
 
-            /* --- APPLICAZIONE FONT GLOBALE E DIMENSIONI AUMENTATE --- */
+            /* --- APPLICAZIONE FONT GLOBALE E DIMENSIONI EXTRA LARGHE --- */
             body, h1, h2, h3, h4, h5, h6, p, a, span, div, strong, b, li {
                 font-family: 'Forum', serif !important;
             }
 
             body {
-                font-size: 18px !important; /* Dimensione base aumentata */
+                font-size: 22px !important; /* Dimensione base ulteriormente aumentata */
             }
 
 			body, #wrapper, #main, .inner, #sidebar, #sidebar > .inner { 
@@ -41,26 +41,54 @@
 			h1, h2, h3, h4, h5, h6, strong, b, .logo, #header strong { color: var(--espresso) !important; }
 			p, li { 
                 color: #4b3621 !important; 
-                font-size: 1.2em !important; /* Paragrafi più grandi e leggibili */
+                font-size: 1.25em !important; /* Paragrafi più grandi */
                 line-height: 1.6 !important; 
             }
             
-            h1 { font-size: 3.5em !important; margin-bottom: 0.2em !important; }
-            h2 { font-size: 2.2em !important; }
-            h3 { font-size: 1.6em !important; }
-            header#header .logo { font-size: 1.3em !important; }
+            h1 { font-size: 3.8em !important; margin-bottom: 0.2em !important; }
+            h2 { font-size: 2.5em !important; }
+            h3 { font-size: 1.8em !important; }
+            header#header .logo { font-size: 1.5em !important; }
 
 			/* Linee Divisorie */
 			#header, section, .major h2 { border-bottom-color: var(--peony) !important; }
 			.major h2::after { background-color: var(--peony) !important; }
             #sidebar { border-left: 5px solid var(--peony) !important; }
 
-            /* RIMOZIONE LINEE TRATTEGGIATE NELLA SIDEBAR */
-            #sidebar section { border-top: none !important; border-bottom: none !important; margin-top: 0 !important; }
+            /* RIMOZIONE FORZATA DI TUTTE LE LINEE TRATTEGGIATE E BORDI INDESIDERATI */
+            #sidebar section, #sidebar hr, .alt { border: none !important; border-top: none !important; border-bottom: none !important; box-shadow: none !important; outline: none !important; }
 
-            /* FIX DEFINITIVO COLORE ICONE */
+            /* FIX COLORE ICONE */
             .icon, .icon::before, .icons li a { color: var(--peony) !important; }
             .icons li a:hover { color: var(--espresso) !important; }
+
+            /* --- BLOCCO CITAZIONE AESTHETIC --- */
+            .aesthetic-quote {
+                background-color: #ffffff !important;
+                border-left: 8px solid var(--peony) !important;
+                padding: 1.5em 2em !important;
+                margin: 2em 0 0 0 !important;
+                border-radius: 0 20px 20px 0 !important;
+                box-shadow: 4px 4px 0px var(--peony) !important;
+                font-style: italic !important;
+                position: relative !important;
+            }
+            .aesthetic-quote p {
+                font-size: 1.4em !important;
+                color: var(--espresso) !important;
+                margin: 0 !important;
+                line-height: 1.4 !important;
+            }
+            .aesthetic-quote .quote-author {
+                display: block !important;
+                margin-top: 1em !important;
+                font-weight: bold !important;
+                font-style: normal !important;
+                font-size: 0.9em !important;
+                text-align: right !important;
+                color: var(--peony) !important;
+                letter-spacing: 1px !important;
+            }
 
 			/* BLOCCHI PERSONALIZZATI */
 			.custom-blocks {
@@ -132,18 +160,6 @@
                 background-color: var(--beige-bg) !important;
             }
 
-			/* BOTTONE SCRIVIMI */
-			.button.big { 
-				background-color: var(--peony) !important; 
-				color: var(--espresso) !important;
-				border-radius: 50px !important;
-				border: none !important;
-				font-size: 1.1em !important;
-				font-weight: bold !important;
-				box-shadow: 4px 4px 0px var(--espresso) !important;
-				margin-top: 1em !important;
-			}
-
 			/* BARRA DI SCORRIMENTO */
 			::-webkit-scrollbar { width: 14px !important; }
 			::-webkit-scrollbar-track { background: var(--beige-bg) !important; }
@@ -173,12 +189,15 @@
 						<div class="content">
 							<header>
 								<h1>Arianna Berrafato</h1>
-								<p style="font-size: 1.4em !important; color: var(--espresso) !important;">Lettere Moderne | Digital Specialist | Sales Expert</p>
+								<p style="font-size: 1.5em !important; color: var(--espresso) !important;">Lettere Moderne | Digital Specialist | Sales Expert</p>
 							</header>
 							<p>Laureata in Lettere Moderne presso l'Università di Catania. Motivata e flessibile, ho maturato solide competenze nel settore retail di alto livello, unendo precisione organizzativa e doti comunicative.</p>
-							<ul class="actions">
-								<li><a href="mailto:arianna.berrafato@gmail.com" class="button big">CONTATTAMI</a></li>
-							</ul>
+							
+                            <blockquote class="aesthetic-quote">
+                                <p>"La bellezza salverà il mondo."</p>
+                                <span class="quote-author">— Fëdor Dostoevskij</span>
+                            </blockquote>
+
 						</div>
 						<span class="image object">
 							<img src="images/io.jpg" alt="Arianna Berrafato" style="border: 8px solid var(--peony); border-radius: 30px; box-shadow: 10px 10px 0px var(--peony);" />
@@ -261,7 +280,7 @@
 
 						<header class="major"><h2>Meteo</h2></header>
 						<div style="margin-bottom: 2em;">
-							<a class="weatherwidget-io" href="https://forecast7.com/it/37initial0815initial29/siracusa/" data-label_1="SIRACUSA" data-label_2="METEO" data-theme="pure" data-basecolor="#FDFBF7" data-accent="#F4C9D6" data-textcolor="#3E2723">SIRACUSA WEATHER</a>
+							<a class="weatherwidget-io" href="https://forecast7.com/it/37initial0815initial29/siracusa/" data-label_1="SIRACUSA" data-label_2="METEO" data-theme="pure" data-basecolor="#FDFBF7" data-accent="#F4C9D6" data-textcolor="#3E2723" style="border: none !important; display: block;">SIRACUSA WEATHER</a>
 							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');</script>
 						</div>
 						
